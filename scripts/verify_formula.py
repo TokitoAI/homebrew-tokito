@@ -14,8 +14,12 @@ FORMULA = Path(__file__).parents[1] / "Formula" / "tokito.rb"
 MAX_ARCHIVE_BYTES = 100 * 1024 * 1024
 FIELD = {
     name: re.compile(rf'^\s*{name}\s+"([^"]+)"\s*$', re.MULTILINE)
-    for name in ("url", "version", "sha256")
+    for name in ("url", "sha256")
 }
+RELEASE_URL = re.compile(
+    r"https://github\.com/TokitoAI/tokito/releases/download/v(?P<version>[0-9]+\.[0-9]+\.[0-9]+)/"
+    r"tokito-v(?P=version)-macos-universal\.tar\.gz"
+)
 
 
 def fetch(url: str) -> bytes:
@@ -40,13 +44,10 @@ def fields() -> dict[str, str]:
         if len(matches) != 1:
             raise ValueError(f"formula must contain exactly one {name}")
         values[name] = matches[0]
-    version = values["version"]
-    expected_url = (
-        f"https://github.com/TokitoAI/tokito/releases/download/v{version}/"
-        f"tokito-v{version}-macos-universal.tar.gz"
-    )
-    if values["url"] != expected_url or re.fullmatch(r"[0-9a-f]{64}", values["sha256"]) is None:
+    match = RELEASE_URL.fullmatch(values["url"])
+    if match is None or re.fullmatch(r"[0-9a-f]{64}", values["sha256"]) is None:
         raise ValueError("formula release identity is inconsistent")
+    values["version"] = match.group("version")
     return values
 
 

@@ -6,7 +6,6 @@ class Tokito < Formula
   desc "AI-assisted desktop schematic studio"
   homepage "https://github.com/TokitoAI/tokito"
   url "https://github.com/TokitoAI/tokito/releases/download/v0.0.10/tokito-v0.0.10-macos-universal.tar.gz"
-  version "0.0.10"
   sha256 "e3b9eb42dc7a98292009d482087c2c9ba333d91258076729b345ea0069c922fe"
   license "MIT"
 
