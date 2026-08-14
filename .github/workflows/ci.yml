@@ -25,8 +25,11 @@ jobs:
       - name: Audit and style formula
         run: |
           brew style Formula/tokito.rb
-          brew audit --strict --online Formula/tokito.rb
+          brew tap-new --no-git TokitoAI/tokito
+          cp Formula/tokito.rb "$(brew --repository TokitoAI/tokito)/Formula/tokito.rb"
+          brew audit --strict --online tokitoai/tokito/tokito
       - name: Install and test formula
         run: |
-          brew install --formula "$PWD/Formula/tokito.rb"
-          brew test tokito
+          brew trust TokitoAI/tokito
+          HOMEBREW_NO_INSTALL_FROM_API=1 brew install --formula tokitoai/tokito/tokito
+          brew test tokitoai/tokito/tokito
