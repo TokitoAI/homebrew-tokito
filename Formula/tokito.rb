@@ -1,16 +1,13 @@
 # Source-of-truth Homebrew formula for the Tokito desktop schematic studio.
 #
-# This file is mirrored to https://github.com/TokitoAI/homebrew-tokito.
-# Until the release workflow opens an auto-PR (later slice), update the
-# `url`, `sha256`, and `version` lines by hand after each GitHub Release,
-# then push the change to the tap.
+# Release automation proposes version/checksum changes through a protected PR.
 
 class Tokito < Formula
   desc "AI-assisted desktop schematic studio"
   homepage "https://github.com/TokitoAI/tokito"
-  url "https://github.com/TokitoAI/tokito/releases/download/v0.0.5/tokito-v0.0.5-macos-universal.tar.gz"
-  version "0.0.5"
-  sha256 "8b644cf9bdd745876d3ba3d8c701241696bd5d82cfe9004b38d25cde7693baa1"
+  url "https://github.com/TokitoAI/tokito/releases/download/v0.0.10/tokito-v0.0.10-macos-universal.tar.gz"
+  version "0.0.10"
+  sha256 "e3b9eb42dc7a98292009d482087c2c9ba333d91258076729b345ea0069c922fe"
   license "MIT"
 
   def install

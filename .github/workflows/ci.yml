@@ -1,0 +1,32 @@
+name: ci
+
+on:
+  pull_request:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  verify-artifact:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Verify Ruby syntax
+        run: ruby -c Formula/tokito.rb
+      - name: Verify release identity, checksums, and archive safety
+        run: python3 scripts/verify_formula.py
+
+  brew-test:
+    runs-on: macos-14
+    steps:
+      - uses: actions/checkout@11d5960a326750d5838078e36cf38b85af677262 # v4
+      - name: Audit and style formula
+        run: |
+          brew style Formula/tokito.rb
+          brew audit --strict --online Formula/tokito.rb
+      - name: Install and test formula
+        run: |
+          brew install --formula "$PWD/Formula/tokito.rb"
+          brew test tokito
