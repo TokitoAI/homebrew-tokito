@@ -35,12 +35,11 @@ TokitoAI/tokito/tokito` whitelists just this formula. Either is fine.
 
 ## Releases
 
-The formula is updated by hand against new GitHub Releases at
-<https://github.com/TokitoAI/tokito/releases>. The macOS universal-binary
-tarball asset on each release is what the formula points at; its
-`.sha256` file is the value pasted into `Formula/tokito.rb`.
+Formula updates are proposed as release-specific pull requests against this
+protected tap. CI downloads the macOS universal archive and checksum sidecar,
+requires both hashes to match the formula, rejects unsafe archive members, and
+performs a real Homebrew install/test on macOS before merge.
 
-The source-of-truth template lives at
+The release template lives at
 [`packaging/homebrew/Formula/tokito.rb`](https://github.com/TokitoAI/tokito/blob/master/packaging/homebrew/Formula/tokito.rb)
-in the main repo. A future slice will open the formula-update PR
-automatically from the release workflow.
+in the main repo. Release automation never pushes directly to `main`.
