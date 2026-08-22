@@ -45,6 +45,7 @@ The source repository is private and is not an installation boundary; release
 promotion verifies source digests, publishes without replacement, and proves
 anonymous downloads before updating this formula.
 
-The release template lives at
-[`packaging/homebrew/Formula/tokito.rb`](https://github.com/TokitoAI/tokito/blob/master/packaging/homebrew/Formula/tokito.rb)
-in the main repo. Release automation never pushes directly to `main`.
+Release automation is maintained with the private product source and never
+pushes directly to this repository's protected `main` branch. Everything needed
+to audit the public formula, artifact identity, archive safety, and installation
+path remains in this tap.
