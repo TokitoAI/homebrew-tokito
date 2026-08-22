@@ -1,6 +1,6 @@
 # homebrew-tokito
 
-Homebrew tap for [Tokito](https://github.com/TokitoAI/tokito) — the AI-assisted desktop schematic studio.
+Homebrew tap for [Tokito](https://tokito.dev) — the AI-assisted desktop schematic studio.
 
 ## Install
 
@@ -39,6 +39,11 @@ Formula updates are proposed as release-specific pull requests against this
 protected tap. CI downloads the macOS universal archive and checksum sidecar,
 requires both hashes to match the formula, rejects unsafe archive members, and
 performs a real Homebrew install/test on macOS before merge.
+
+This public repository also hosts the digest-identical desktop binary mirror.
+The source repository is private and is not an installation boundary; release
+promotion verifies source digests, publishes without replacement, and proves
+anonymous downloads before updating this formula.
 
 The release template lives at
 [`packaging/homebrew/Formula/tokito.rb`](https://github.com/TokitoAI/tokito/blob/master/packaging/homebrew/Formula/tokito.rb)

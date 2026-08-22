@@ -4,9 +4,9 @@
 
 class Tokito < Formula
   desc "AI-assisted desktop schematic studio"
-  homepage "https://github.com/TokitoAI/tokito"
-  url "https://github.com/TokitoAI/tokito/releases/download/v0.0.11/tokito-v0.0.11-macos-universal.tar.gz"
-  sha256 "9e417d2de8b5a37d1a64c3dd36c25e764420de5f4e4e9844f27eeaae3a61884e"
+  homepage "https://tokito.dev"
+  url "https://github.com/TokitoAI/homebrew-tokito/releases/download/v0.0.12/tokito-v0.0.12-macos-universal.tar.gz"
+  sha256 "426a338f00dedd0374684dacff4900688f29126661114641baeac1322e4e30ed"
   license "MIT"
 
   def install
