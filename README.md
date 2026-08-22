@@ -40,6 +40,11 @@ protected tap. CI downloads the macOS universal archive and checksum sidecar,
 requires both hashes to match the formula, rejects unsafe archive members, and
 performs a real Homebrew install/test on macOS before merge.
 
+This public repository also hosts the digest-identical desktop binary mirror.
+The source repository is private and is not an installation boundary; release
+promotion verifies source digests, publishes without replacement, and proves
+anonymous downloads before updating this formula.
+
 The release template lives at
 [`packaging/homebrew/Formula/tokito.rb`](https://github.com/TokitoAI/tokito/blob/master/packaging/homebrew/Formula/tokito.rb)
 in the main repo. Release automation never pushes directly to `main`.

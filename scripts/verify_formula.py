@@ -17,7 +17,7 @@ FIELD = {
     for name in ("url", "sha256")
 }
 RELEASE_URL = re.compile(
-    r"https://github\.com/TokitoAI/tokito/releases/download/v(?P<version>[0-9]+\.[0-9]+\.[0-9]+)/"
+    r"https://github\.com/TokitoAI/homebrew-tokito/releases/download/v(?P<version>[0-9]+\.[0-9]+\.[0-9]+)/"
     r"tokito-v(?P=version)-macos-universal\.tar\.gz"
 )
 
