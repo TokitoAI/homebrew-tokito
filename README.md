@@ -1,6 +1,6 @@
 # homebrew-tokito
 
-Homebrew tap for [Tokito](https://github.com/TokitoAI/tokito) — the AI-assisted desktop schematic studio.
+Homebrew tap for [Tokito](https://tokito.dev) — the AI-assisted desktop schematic studio.
 
 ## Install
 
